@@ -16,6 +16,7 @@ import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { DashboardComponent } from './dashboard';
+import { FeedComponent } from './feed';
 
 @NgModule({
     imports: [
@@ -33,7 +34,7 @@ import { DashboardComponent } from './dashboard';
         HomeComponent,
         LoginComponent,
         RegisterComponent,
-  //      NavbarComponent,
+        FeedComponent,
         DashboardComponent
     ],
     bootstrap: [AppComponent]
