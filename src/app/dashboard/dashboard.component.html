@@ -1,0 +1,65 @@
+<h4>This is Dashboard Page</h4>
+<div style="text-align:left;width:500px;">
+<button (click)="getusers()">Fetch the users</button>
+</div>
+
+
+<table class="stripped" >
+    <thead><tr>
+      <th>Name</th>
+      <th>Email </th>
+      <th> Password </th>
+     </tr></thead>
+    <tbody>
+      <tr *ngFor="let users of users$ | async">
+        <td> {{ users.name }}</td>
+        <td> {{ users.email }} </td>
+        <td> {{ users.password }} </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card blue-grey black">
+        <div class="card-content white-text">
+          <span class="card-title">Card Title</span>
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+         
+  <div class="collection" *ngFor="let users of users$ | async">
+    <a href="#!" class="collection-item">{{users.name}}</a>
+    <a href="#!" class="collection-item">{{users.email}}</a>
+    <a href="#!" class="collection-item">{{users.password}}</a>
+  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!--
+ <ul class="collection">
+        <li  *ngFor="let users of users$ | async" class="collection-item avatar">
+                <img src="images/yuna.jpg" alt="" class="circle">
+                <span class="title">{{ users.name}}</span>
+                <p>{{users.email}} <br>
+                   {{users.password}}
+                </p>
+                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+              </li>
+  </ul>
+
+-->
+ 
+  <!--
+<ul>
+    <li *ngFor="let users of users$ | async">{{ users.age}}</li>
+    <li *ngFor="let users of users$ | async">{{ users.height}}</li>
+    <li *ngFor="let users of users$ | async">{{ users.income}}</li>
+</ul>
+    
+  -->
