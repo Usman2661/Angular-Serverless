@@ -41,20 +41,29 @@ export class LoginComponent implements OnInit {
    .subscribe(
      (data: Login[]) =>  { //start of (1)
        this.logins = data;
-       console.log(data);
-       if (data.toString()!='success'){
+        
+        var userdetails=JSON.stringify(data);
+        var user= userdetails.replace("[","");
+        var user2= user.replace("]","");
+        console.log(userdetails);
+      //  console.log(user2);
+
+        var obj=JSON.parse(user2);
+        var name = obj.name;
+
+       // console.log(name);
+       if (data.toString()=='error'){
         swal.fire(
             'Error !',
             'Email or password is wrong',
             'error'
           )
     }
-    if (data.toString()=='success'){
+    if (data.toString()!='error'){
        
           this.router.navigate(['/dashboard']);
           localStorage.setItem('Email', Email);
-        
-    
+          localStorage.setItem('Name', name);
     }
      }, //end of (1)
      (error: any)   => console.log(error)

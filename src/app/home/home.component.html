@@ -1,34 +1,4 @@
 <h1>New Post</h1>
-<!--
-<div class="row">
-    <form  [formGroup]="angForm" #login = "ngForm"  (ngSubmit) = "onClickSubmit(login.value)" >
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">title</i>
-            <input type="text"  formControlName="PostTitle" name="PostTitle" id="PostTitle" class="validate" ngModel>
-            <label for="PostTitle">Post Title</label>
-          </div>
-          <div *ngIf="angForm.controls['PostTitle'].invalid && (angForm.controls['PostTitle'].dirty || angForm.controls['PostTitle'].touched)" class="alert alert-danger">
-            <div *ngIf="angForm.controls['PostTitle'].errors.required">
-              Post Title is required
-                        </div>
-          <div class="input-field col s12">
-            <i class="material-icons prefix">description</i>
-            <input type="text" formControlName="PostMessage" name="PostMessage" id="PostMessage" class="PostMessage" ngModel>
-            <label for="PostMessage">Post Description</label>
-          </div>
-          <div *ngIf="angForm.controls['PostMessage'].invalid && (angForm.controls['PostMessage'].dirty || angForm.controls['PostMessage'].touched)" class="alert alert-danger">
-              <div *ngIf="angForm.controls['PostMessage'].errors.required">
-                The Post Description is required
-              </div>
-      
-        </div>
-  
-        <button class="btn waves-effect waves-light" type="submit" value="submite">Create Post
-          <i class="material-icons right">send</i>
-        </button>
-      </form>
-    </div>-->
 
     <form [formGroup]="angForm" #login = "ngForm"  (ngSubmit) = "onClickSubmit(login.value)" novalidate>
 
@@ -52,7 +22,6 @@
             <div *ngIf="angForm.controls['PostMessage'].errors.required">
 
 <p style="color:red;">Post Message is required</p>
-
             </div>
             
         </div>

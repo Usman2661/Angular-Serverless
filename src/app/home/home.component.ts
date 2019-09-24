@@ -33,14 +33,19 @@ export class HomeComponent {
        onClickSubmit(formData:any) {
         
         var email=localStorage.getItem('Email');
-        let newPost: any = { PostTitle: formData.PostTitle, PostMessage: formData.PostMessage, Username: formData.PostTitle , UserEmail:email, DateTime: "15 July 1996"};
+        var name=localStorage.getItem('Name');
+
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date+' '+time;
+
+        let newPost: any = { PostTitle: formData.PostTitle, PostMessage: formData.PostMessage, Username: name , UserEmail:email, DateTime: dateTime};
         this.myData.newPost(newPost)
             .subscribe(
                 (data: Posts) => {
                    console.log(data);
-                   // alert("User Created Successfully!!!");
-
-                   //console.log(data.toString());
+               
                      if (data.toString()=='{}'){
                          swal.fire(
                              'Error !',

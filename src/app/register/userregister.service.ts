@@ -31,6 +31,7 @@ export class UserregisterService {
      // https://sbuf52bt6i.execute-api.us-east-2.amazonaws.com/Test/-login?
     }
 
+
   addUsers(newUsers:Users): Observable<Users>{
       return this.http.post<Users>(`${this.base_url}`, newUsers, {
           headers: {
