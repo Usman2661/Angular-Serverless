@@ -1,31 +1,12 @@
 <h3 style="margin-left: 350px;">Blog Posts</h3>
-<!--
-<div class="row">
-    <div class="col s12 m6">
-      <div class="card blue-grey white">
-        <div class="card-content black-text">
-          <span class="card-title">Card Title</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-            <button class="btn waves-effect white" style="color:black;" type="submit" name="action">Comment
-                <i class="material-icons right">comment</i>
-              </button>
-                    
-        </div>
-      </div>
-    </div>
-  </div>
 
--->
   <div *ngFor="let posts of posts$ | async" class="row" style="margin-left: 200px; width:1100px;" > 
     <div class="col s12 m6">
       <div class="card">
         <div class="card-image">
           <img src="../../assets/images/test.jpg" style="height: 300px;" >
         
-          <a class="btn-floating halfway-fab waves-effect waves-light blue" href="/home?Post={{posts.PostID}}"><i class="material-icons">visibility</i></a>
+          <a class="btn-floating halfway-fab waves-effect waves-light red" href="/mypost?Post={{posts.PostID}}"><i class="material-icons">visibility</i></a>
         </div>
      
   <div class="chip blue" style="color: white">
@@ -36,6 +17,9 @@
           <p>{{posts.PostMessage}}</p>
         </div>
       
+        
+      
+
         <div class="chip blue" style="color: white">
             <img src="../../assets/images/user.png" alt="Contact Person">
             {{posts.Username}}
@@ -46,19 +30,32 @@
  
   </div>
 
-
-
+<hr>
+  <form [formGroup]="angForm" #comments = "ngForm"   (ngSubmit) = "onPostComment($event)" >
   <div class="row">
+
+   
+      <input id="PostID" formControlName="PostID" name="PostID"  type="hidden" value="{{posts.PostID}}"  >
+  
     <div class="input-field col s6">
       <i class="material-icons prefix">comment</i>
-      <input id="icon_prefix" type="text" class="validate">
-      <label for="icon_prefix">Add Comments Here</label>
+      <input id="Comment" formControlName="Comment" name="Comment" type="text" >
+      <label for="Comment">Add Comments Here</label>
     </div>
-    <a class="btn-floating blue"><i class="material-icons">add</i></a>
+    
+        <div *ngIf="angForm.controls['Comment'].invalid && (angForm.controls['Comment'].dirty || angForm.controls['Comment'].touched)" class="alert alert-danger">
+      <div *ngIf="angForm.controls['Comment'].errors.required">
+       <!-- <p style="color:red;">Post Title is required</p>--> 
+      </div>
+    </div>
+    
+  
+    <button class="btn-floating blue" type="submit"  [disabled]="angForm.pristine || angForm.invalid"   value="submite"><i class="material-icons">check</i></button>
 
         
         
       </div>
+      </form>
     </div>
   </div>
 

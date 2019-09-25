@@ -16,6 +16,7 @@ import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { DashboardComponent } from './dashboard';
+import { SinglePostComponent } from './SinglePost';
 import { FeedComponent } from './feed';
 
 @NgModule({
@@ -35,6 +36,7 @@ import { FeedComponent } from './feed';
         LoginComponent,
         RegisterComponent,
         FeedComponent,
+        SinglePostComponent,
         DashboardComponent
     ],
     bootstrap: [AppComponent]

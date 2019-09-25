@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { Comment } from '../feed/comment.model';
 import { Users } from './user.model';
 import { Posts } from '../home/posts.model';
 import { Login } from '../login/login.model';
@@ -44,6 +44,14 @@ export class UserregisterService {
           }
       });
   }
+
+  addComment(newComment:Comment): Observable<Comment>{
+    return this.http.post<Comment>(`https://sbuf52bt6i.execute-api.us-east-2.amazonaws.com/Test/comment`, newComment, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+}
 
   newPost(newPosts:Posts): Observable<Posts>{
     return this.http.post<Posts>(`https://sbuf52bt6i.execute-api.us-east-2.amazonaws.com/Test/posts`, newPosts, {

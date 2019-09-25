@@ -5,6 +5,7 @@ import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { DashboardComponent } from './dashboard';
 import { FeedComponent } from './feed';
+import { SinglePostComponent } from './SinglePost';
 
 const routes: Routes = [
     { path: '', component: LoginComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'feed', component: FeedComponent },
     { path: 'home', component: HomeComponent },
+    { path: 'mypost', component: SinglePostComponent },
   
 
     // otherwise redirect to home
