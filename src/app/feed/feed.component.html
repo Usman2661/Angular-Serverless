@@ -1,4 +1,4 @@
-<h3 style="position: center;">Blog Posts</h3>
+<h3 style="margin-left: 350px;">Blog Posts</h3>
 <!--
 <div class="row">
     <div class="col s12 m6">
@@ -19,74 +19,46 @@
   </div>
 
 -->
-  <div class="row" style="margin-top:200px;"> 
+  <div *ngFor="let posts of posts$ | async" class="row" style="margin-left: 200px; width:1100px;" > 
     <div class="col s12 m6">
       <div class="card">
         <div class="card-image">
-          <img src="../../assets/images/test.jpg">
+          <img src="../../assets/images/test.jpg" style="height: 300px;" >
         
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">visibility</i></a>
+          <a class="btn-floating halfway-fab waves-effect waves-light blue" href="/home?Post={{posts.PostID}}"><i class="material-icons">visibility</i></a>
         </div>
      
-  <div class="chip">
+  <div class="chip blue" style="color: white">
       Sports
-     
     </div>
-        <div class="card-content" style="margin-top:-50px;">
-          <h5>This is the blog title</h5>
-          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+        <div class="card-content" style="margin-top:-40px;">
+          <h5>{{posts.PostTitle}}</h5>
+          <p>{{posts.PostMessage}}</p>
         </div>
       
-        <div class="chip" style="color: indigo">
-            <img src="../../assets/images/draxLogo.png" alt="Contact Person">
-            Usman Ali
+        <div class="chip blue" style="color: white">
+            <img src="../../assets/images/user.png" alt="Contact Person">
+            {{posts.Username}}
           </div>
+          
+  <div class="chip blue" style="color: white">
+    {{posts.DateTime}}
+ 
+  </div>
+
+
+
+  <div class="row">
+    <div class="input-field col s6">
+      <i class="material-icons prefix">comment</i>
+      <input id="icon_prefix" type="text" class="validate">
+      <label for="icon_prefix">Add Comments Here</label>
+    </div>
+    <a class="btn-floating blue"><i class="material-icons">add</i></a>
+
+        
         
       </div>
     </div>
   </div>
 
-
-<div class="wrapper">
-    		
-    <div class="card radius shadowDepth1">
-        <div class="card__image border-tlr-radius">
-            <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
-        </div>
-
-        <div class="card__content card__padding">
-            <div class="card__share">
-                <div class="card__social">  
-                    <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-                    <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-                    <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-                </div>
-
-                <a id="share" class="share-toggle share-icon" href="#"></a>
-            </div>
-
-            <div class="card__meta">
-                <a href="#">Web Design</a>
-                <time>17th March</time>
-            </div>
-
-            <article class="card__article">
-                <h2><a href="#">Material Design Card - For Blog Post Article</a></h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
-            </article>
-        </div>
-
-        <div class="card__action">
-            
-            <div class="card__author">
-                <img src="http://lorempixel.com/40/40/sports/" alt="user">
-                <div class="card__author-content">
-                    By <a href="#">John Doe</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <p class="text-center">Created By <a href="https://twitter.com/mithicher">Mithicher Baro</a></p>
-</div>

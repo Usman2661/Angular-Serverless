@@ -23,6 +23,11 @@ export class UserregisterService {
       return this.http.get<Users[]>(`https://sbuf52bt6i.execute-api.us-east-2.amazonaws.com/Test/drax-test?type=all`);
   }
 
+  getPosts(): Observable<Posts[]>{
+    //  console.log('getting all Userss from the server');
+      return this.http.get<Posts[]>(`https://sbuf52bt6i.execute-api.us-east-2.amazonaws.com/Test/drax-test?type=posts`);
+  }
+
    //method to get all the Userss as you can see it return an observable
    loginAuth(email,password): Observable<Login[]>{
     //  console.log('getting all Userss from the server');
