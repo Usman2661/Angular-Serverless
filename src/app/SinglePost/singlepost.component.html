@@ -1,1 +1,69 @@
-<h4>Single Post view</h4>
+<div id ="maincard" name="maincard" class= "maincard">
+    <div  *ngFor= "let mypost of mypost$ | async "class="row1" > 
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://s3.us-east-2.amazonaws.com/com.udemycourse.compare-yourself/miles.PNG" style="height: 300px;" >
+            
+    
+            </div>
+         
+      <div class="chip blue" style="color: white">
+          Sports
+        </div>
+            <div class="card-content">
+              <h5>{{mypost.PostTitle}}</h5>
+              <p id="post-text" class="post-text">{{mypost.PostMessage}} </p>
+            </div>
+          
+            
+          
+    
+            <div class="chip blue" style="color: white">
+                <img src="../../assets/images/user.png" alt="Contact Person">
+                {{mypost.Username}}
+              </div>
+              
+      <div class="chip blue" style="color: white">
+       
+        {{mypost.DateTime}}
+      </div>
+    
+    <hr>
+      <form [formGroup]="angForm" #comments = "ngForm"   (ngSubmit) = "onPostComment($event)" >
+      <div class="row">
+
+          <input id="PostID" formControlName="PostID" name="PostID"  type="hidden" value="{{mypost.PostID}}"  >
+      
+        <div class="input-field col s6">
+          <i class="material-icons prefix">comment</i>
+          <input id="Comment" formControlName="Comment" name="Comment" type="text" >
+          <label for="Comment">Add Comments Here</label>
+        </div>
+        
+            <div *ngIf="angForm.controls['Comment'].invalid && (angForm.controls['Comment'].dirty || angForm.controls['Comment'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['Comment'].errors.required">
+           <!-- <p style="color:red;">Post Title is required</p>--> 
+          </div>
+        </div>
+        
+      
+        <button class="btn-floating blue" type="submit"  [disabled]="angForm.pristine || angForm.invalid"   value="submite"><i class="material-icons">check</i></button>
+    
+            
+            
+          </div>
+          </form>
+          
+          <div  *ngFor= "let mycomments of mycomments$ | async " class="mycomments">
+            <div class="chip" style="width: 580px;">
+              <img src="../../assets/images/user.png" alt="Contact Person">
+              {{mycomments.Username}}:{{mycomments.Comment}}--{{mycomments.DateTime}}
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    
+    
+</div>

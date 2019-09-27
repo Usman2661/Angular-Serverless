@@ -5,6 +5,7 @@ import { Comment } from '../feed/comment.model';
 import { Users } from './user.model';
 import { Posts } from '../home/posts.model';
 import { Login } from '../login/login.model';
+import { SinglePostComment } from '../SinglePost/singlepostcomment.model';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,20 @@ export class UserregisterService {
       return this.http.get<Login[]>(`https://sbuf52bt6i.execute-api.us-east-2.amazonaws.com/Test/-login?Email=`+email+`&Password=`+password);
      // https://sbuf52bt6i.execute-api.us-east-2.amazonaws.com/Test/-login?
     }
+
+    getComments(PostID): Observable<SinglePostComment[]>{
+      //  console.log('getting all Userss from the server');
+       
+        return this.http.get<SinglePostComment[]>(`https://sbuf52bt6i.execute-api.us-east-2.amazonaws.com/Test/comment?PostID=`+PostID);
+       // https://sbuf52bt6i.execute-api.us-east-2.amazonaws.com/Test/-login?
+      }
+
+      getsinglepost(PostID): Observable<SinglePostComment[]>{
+        //  console.log('getting all Userss from the server');
+         
+          return this.http.get<SinglePostComment[]>(`https://sbuf52bt6i.execute-api.us-east-2.amazonaws.com/Test/posts?PostID=`+PostID);
+         // https://sbuf52bt6i.execute-api.us-east-2.amazonaws.com/Test/-login?
+        }
 
 
   addUsers(newUsers:Users): Observable<Users>{
