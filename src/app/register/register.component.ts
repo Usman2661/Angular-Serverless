@@ -4,21 +4,40 @@ import { UserregisterService } from './userregister.service';
 import { Users } from './user.model';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { Router } from '@angular/router';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 import swal from 'sweetalert2';
 
 @Component({ templateUrl: 'register.component.html' })
 export class RegisterComponent implements OnInit {
-
+  registerForm: FormGroup;
+  submitted = false;
     constructor(private myData: UserregisterService,
       private router:Router,
+      private fb: FormBuilder,
       ) {} //constructor
+
+
     ngOnInit() {
+      this.registerForm = this.fb.group({
+        email: ['', [Validators.required , Validators.email] ],
+        password: ['', Validators.required ],
+        name: ['', Validators.required]
+     });
       if (localStorage.getItem('Email')!=null){
         this.router.navigate(['/dashboard']);
       }
     }
 
+    get f() { return this.registerForm.controls; }
+
+
    onClickSubmit(formData:any) {
+
+
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+  }
  
    let newUsers: any = { Name: formData.name, Email: formData.email, Password: formData.password };
    this.myData.addUsers(newUsers)

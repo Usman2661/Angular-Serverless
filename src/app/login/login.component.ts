@@ -5,6 +5,7 @@ import { Login } from './login.model';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 import { NavbarService } from '../navbar/navbar.service';
 
 
@@ -12,17 +13,28 @@ import { NavbarService } from '../navbar/navbar.service';
 export class LoginComponent implements OnInit {
     logins: Login[];
   displayOrNot: boolean = true;
+  angForm: FormGroup;
+  submitted = false;
+
 
   constructor(
     private myData: UserregisterService,
     private router:Router,
-    public nav:NavbarService
-  ) {}
+    private fb: FormBuilder,
+    public nav:NavbarService,
+  ) {
+    //this.createForm();
+  }
+  
+
   
 
   ngOnInit(): void {
-    
-    this.nav.show();
+
+    this.angForm = this.fb.group({
+      email: ['', [Validators.required , Validators.email] ],
+      password: ['', Validators.required ]
+   });
 
     if (localStorage.getItem('Email')!=null){
       this.router.navigate(['/dashboard']);
@@ -31,8 +43,15 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/login']);
     }          
   }
+  get f() { return this.angForm.controls; }
 
    onClickSubmit(formData:any) {
+
+    this.submitted = true;
+    if (this.angForm.invalid) {
+      return;
+  }
+
    let loginDetails: any = {Email: formData.email, Password: formData.password };
    var Email = formData.email;
    var Passsword= formData.password;
@@ -46,12 +65,11 @@ export class LoginComponent implements OnInit {
         var user= userdetails.replace("[","");
         var user2= user.replace("]","");
         console.log(userdetails);
-      //  console.log(user2);
+     
 
         var obj=JSON.parse(user2);
         var name = obj.name;
 
-       // console.log(name);
        if (data.toString()=='error'){
         swal.fire(
             'Error !',
