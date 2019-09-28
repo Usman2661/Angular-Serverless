@@ -29,7 +29,79 @@ export class AppComponent implements OnInit {
 
   logout(){
     localStorage.removeItem('Email');
+    localStorage.removeItem('Name');
+    this.loggedIn=false;
     this.router.navigate(['/login']);
+    console.log("Logout is called!!");
+
+  }
+  feed(){
+    
+    this.router.navigate(['/feed']);
+    if (localStorage.getItem('Email')!=null){
+    
+      this.loggedIn=true;
+    }
+    else if (localStorage.getItem('Email') == null){
+     
+    this.loggedIn=false;
+    }
+    console.log("Feed is called");
+  }
+  dashboard(){
+
+    this.router.navigate(['/dashboard']);
+    if (localStorage.getItem('Email')!=null){
+    
+      this.loggedIn=true;
+    }
+    else if (localStorage.getItem('Email') == null){
+     
+    this.loggedIn=false;
+    }
+    console.log("Dashboard is called");
+
+  }
+  register (){
+  
+    this.router.navigate(['/register']);
+    if (localStorage.getItem('Email')!=null){
+    
+      this.loggedIn=true;
+    }
+    else if (localStorage.getItem('Email') == null){
+     
+    this.loggedIn=false;
+    }
+    console.log("Register is called");
+
+  }
+  login(){
+  
+    this.router.navigate(['/login']);
+    if (localStorage.getItem('Email')!=null){
+    
+      this.loggedIn=true;
+    }
+    else if (localStorage.getItem('Email') == null){
+     
+    this.loggedIn=false;
+    }
+    console.log("Login is called");
+
+  }
+  home(){
+
+    this.router.navigate(['/home']);
+    if (localStorage.getItem('Email')!=null){
+    
+      this.loggedIn=true;
+    }
+    else if (localStorage.getItem('Email') == null){
+     
+    this.loggedIn=false;
+    }
+    console.log("Home is called");
 
   }
 

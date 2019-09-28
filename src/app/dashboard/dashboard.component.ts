@@ -12,12 +12,11 @@ export class DashboardComponent {
         private router:Router,
         ) {} 
    ngOnInit(){
-    if (localStorage.getItem('Email')!=null){
-        this.router.navigate(['/dashboard']);
-      }
-      else if (localStorage.getItem('Email') == null){
+  if (localStorage.getItem('Email') == null){
         this.router.navigate(['/login']);
       }
+
+     // window.location.reload();
 
         this.users$ = this.userregisterservice.getusers();
     

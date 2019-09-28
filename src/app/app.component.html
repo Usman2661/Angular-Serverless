@@ -2,17 +2,16 @@
 <!--
   
 -->
-<nav >
+<nav  *ngIf="loggedIn">
     <div class="nav-wrapper">
-      <a  href="#" class="brand-logo right">Logo</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <a  href="/feed" class="brand-logo">Serverless Blog</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-        <li><a routerLink="/home">Create Post</a></li>
-        <li><a routerLink="/feed">Feed</a></li>
-        <li><a routerLink="/dashboard">Dashboard</a></li>
-        <li><a routerLink="/login">Login</a></li>
-        <li><a routerLink="/register">Register</a></li>
-        <li><a (click)="logout()" routerLink="/logout">Logout</a></li>
+        <li><a (click)="home()" routerLink="/home">Create Post</a></li>
+        <li><a (click)="feed()" routerLink="/feed">Feed</a></li>
+        <li><a (click)="dashboard()" routerLink="/dashboard">Dashboard</a></li>
+    
+        <li><a  (click)="logout()" routerLink="/logout">Logout</a></li>
     
     <li ><a routerLink="/register"></a></li>
  

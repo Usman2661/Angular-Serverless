@@ -82,6 +82,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/dashboard']);
           localStorage.setItem('Email', Email);
           localStorage.setItem('Name', name);
+          window.location.reload();
     }
      }, //end of (1)
      (error: any)   => console.log(error)
