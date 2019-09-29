@@ -86,6 +86,7 @@ export class SinglePostComponent {
                      'Comment Added Successfully!',
                      'success'
                    )
+                   window.location.reload();
              }
            
 

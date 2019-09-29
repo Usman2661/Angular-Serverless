@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
    });
 
     if (localStorage.getItem('Email')!=null){
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/feed']);
     }
     else if (localStorage.getItem('Email') == null){
       this.router.navigate(['/login']);
@@ -79,7 +79,7 @@ export class LoginComponent implements OnInit {
     }
     if (data.toString()!='error'){
        
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/feed']);
           localStorage.setItem('Email', Email);
           localStorage.setItem('Name', name);
           window.location.reload();

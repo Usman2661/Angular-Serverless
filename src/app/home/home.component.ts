@@ -69,15 +69,15 @@ export class HomeComponent {
                 (error: any) => console.log(error), //(2)wese2
             );
           }  
-/*
-          //Image upload
 
+          //Image upload
+/*
           fileEvent(fileInput: any) {
             
             const AWSService = AWS;
             const region = 'us-east-2	';
             const bucketName = 'com.udemycourse.compare-yourself';
-            const IdentityPoolId = '';
+            const IdentityPoolId = 'us-east-1:a0c9d359-4cfe-486f-b80b-5d8462144ec8';
             const file = fileInput.target.files[0];
           //Configures the AWS service and initial authorization
             AWSService.config.update({
@@ -101,4 +101,5 @@ export class HomeComponent {
            });
           }
           */
+          
 }

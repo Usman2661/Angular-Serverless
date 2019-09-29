@@ -6,7 +6,9 @@ import { Comment } from './comment.model';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 import swal from 'sweetalert2';
 
-@Component({ templateUrl: 'feed.component.html' })
+@Component({ 
+  styleUrls: ['feed.component.css'],
+  templateUrl: 'feed.component.html' })
 export class FeedComponent  {
 
     posts$;

@@ -4,7 +4,7 @@
         <div class="col s12 m6">
           <div class="card">
             <div class="card-image">
-              <img src="https://s3.us-east-2.amazonaws.com/com.udemycourse.compare-yourself/miles.PNG" style="height: 300px;" >
+              <img src="../../assets/images/test.jpg" style="height: 300px;" >
             
     
             </div>
@@ -57,7 +57,7 @@
           </form>
           
           <div  *ngFor= "let mycomments of mycomments$ | async " class="mycomments">
-            <div class="chip" style="width: 580px;">
+            <div class="chip" >
               <img src="../../assets/images/user.png" alt="Contact Person">
               {{mycomments.Username}}:{{mycomments.Comment}}--{{mycomments.DateTime}}
             </div>

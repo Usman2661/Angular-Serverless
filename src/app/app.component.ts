@@ -11,11 +11,20 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'my-app';
   public loggedIn = false;
+  user;
   ngOnInit(){
+
+    var global = global || window;
+    var Buffer = Buffer || [];
+    var process = process || {
+      env: { DEBUG: undefined },
+      version: []
+    };
 
     if (localStorage.getItem('Email')!=null){
     
       this.loggedIn=true;
+      this.user=localStorage.getItem('Name');
     }
     else if (localStorage.getItem('Email') == null){
      

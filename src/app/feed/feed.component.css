@@ -50,6 +50,9 @@ and (min-width : 1301px) and (max-width:1380px) {
 	margin-left:350px;
 	color:red;
 }
+.row{
+	margin-left: 200px; width:1100px;
+}
 
 }
 /* 1920 by 1080 2nd Most Used Screen*/
