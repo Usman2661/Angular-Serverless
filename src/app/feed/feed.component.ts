@@ -21,7 +21,6 @@ export class FeedComponent  {
       ){
           this.validateform();
       }
-
       validateform() {
         this.angForm = this.fb.group({
            Comment: ['', Validators.required ],

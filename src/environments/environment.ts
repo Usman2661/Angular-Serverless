@@ -3,8 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  bucketname:'usmanblogserverless',
+  region:'us-east-1',
+  cognitouserpoolid:'us-east-1:a0c9d359-4cfe-486f-b80b-5d8462144ec8'
 };
+
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file

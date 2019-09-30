@@ -14,11 +14,16 @@ export class AppComponent implements OnInit {
   user;
   ngOnInit(){
 
+
+
     var global = global || window;
     var Buffer = Buffer || [];
     var process = process || {
       env: { DEBUG: undefined },
       version: []
+
+     // $("button-collapse").sideNav();
+
     };
 
     if (localStorage.getItem('Email')!=null){

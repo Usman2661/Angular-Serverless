@@ -1,18 +1,19 @@
-<h3 style="margin-left: 350px;">Blog Posts</h3>
+<h3 >Blog Posts</h3>
 
+<div id="maincard" class="maincard" name="maincard">   
   <div *ngFor="let posts of posts$ | async" class="row" > 
     <div class="col s12 m6">
       <div class="card">
         <div class="card-image">
-          <img src="../../assets/images/test.jpg" style="height: 300px;" >
+          <img src="{{posts.Image}}" style="height: 300px;" >
         
           <a class="btn-floating halfway-fab waves-effect waves-light red" href="/mypost?Post={{posts.PostID}}"><i class="material-icons">visibility</i></a>
         </div>
      
   <div class="chip blue" style="color: white">
-      Sports
+      {{posts.Catagory}}
     </div>
-        <div class="card-content" style="margin-top:-40px;">
+        <div class="card-content" >
           <h5>{{posts.PostTitle}}</h5>
           <p>{{posts.PostMessage}}</p>
         </div>
@@ -27,12 +28,12 @@
           
   <div class="chip blue" style="color: white">
     {{posts.DateTime}}
- 
   </div>
 
 <hr>
+
   <form [formGroup]="angForm" #comments = "ngForm"   (ngSubmit) = "onPostComment($event)" >
-  <div class="row">
+    <div class="row">
 
    
       <input id="PostID" formControlName="PostID" name="PostID"  type="hidden" value="{{posts.PostID}}"  >
@@ -54,8 +55,10 @@
 
         
         
-      </div>
-      </form>
-    </div>
   </div>
-
+      </form>
+    
+  </div>
+  </div>
+  </div>
+</div>

@@ -16,7 +16,7 @@
               <div class="input-field col s12">
                   <i class="material-icons prefix">lock</i>
                   <input id="password" formControlName="password" type="password" name="password" class="validate" 
-                   [ngClass]="{ 'is-invalid': submitted && f.email.errors }" ngModel>
+                   [ngClass]="{ 'is-invalid': submitted && f.password.errors }" ngModel>
                   <label for="password">Password</label>
                 </div>
                 <div *ngIf="submitted && f.password.errors" class="invalid-feedback">

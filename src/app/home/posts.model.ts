@@ -4,5 +4,7 @@ export interface Posts {
     Username: string;
     UserEmail: string;
     DateTime: string;
+    Image: string;
+    Catagory: string;
   }
   
