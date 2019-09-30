@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-//import { MaterializeModule } from 'angular2-materialize';
+//import  { MaterializeModule } from 'angular2-materialize';
 
 
 import { UserregisterService } from './register/userregister.service';
@@ -30,9 +30,9 @@ import { FeedComponent } from './feed';
         FormsModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
-        MzButtonModule,
-        MzInputModule,
-       // MaterializeModule,
+      MzButtonModule,
+       MzInputModule,
+     //   MaterializeModule,
         SweetAlert2Module,
         appRoutingModule
     ],

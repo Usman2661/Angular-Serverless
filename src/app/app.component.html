@@ -1,7 +1,7 @@
 <nav  *ngIf="loggedIn" class="blue lighten-1">
     <div class="nav-wrapper">
       <a  href="/feed" class="brand-logo">Serverless Blog -- {{user}}</a>
-      <a data-target="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <!-- <a data-target="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a> -->
       <ul id="nav-mobile" class="right hide-on-med-and-down">
 
         <li><a (click)="home()" routerLink="/home">Create Post</a></li>
@@ -15,11 +15,12 @@
     </div>
   </nav>
 
-  <ul class="sidenav" id="mobile-demo">
+  
+  <!-- <ul class="sidenav" id="mobile-demo">
     <li><a (click)="home()" routerLink="/home">Create Post</a></li>
     <li><a (click)="feed()" routerLink="/feed">Feed</a></li>
     <li><a  (click)="logout()" routerLink="/logout">Logout</a></li>
-  </ul>
+  </ul> -->
          
 
 <!-- main content container -->

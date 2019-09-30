@@ -39,11 +39,7 @@
             
         </div>
 
-   
-
-
-       
-      
+  
         <input type="file" (change)="onFileChanged($event)" formControlName="myimage" name="myimage" id="myimage">
 
         <div *ngIf="angForm.controls['myimage'].invalid && (angForm.controls['myimage'].dirty || angForm.controls['myimage'].touched)" class="alert alert-danger">

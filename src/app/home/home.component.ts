@@ -6,6 +6,8 @@ import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import swal from 'sweetalert2';
 import * as AWS from 'aws-sdk';
+import { MzSelectModule } from 'ngx-materialize'
+
 //import * as M from "materialize-css/dist/js/materialize";
 
 
