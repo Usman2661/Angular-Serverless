@@ -13,7 +13,7 @@ import { NavbarService } from './navbar/navbar.service';
 import { appRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MzButtonModule, MzInputModule } from 'ngx-materialize';
+import { MzButtonModule, MzInputModule ,MzSelectModule  } from 'ngx-materialize';
 
 
 import { HomeComponent } from './home';
@@ -30,9 +30,9 @@ import { FeedComponent } from './feed';
         FormsModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
-      MzButtonModule,
-       MzInputModule,
-     //   MaterializeModule,
+        MzButtonModule,
+        MzInputModule,
+        MzSelectModule ,
         SweetAlert2Module,
         appRoutingModule
     ],

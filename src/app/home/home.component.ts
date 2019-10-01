@@ -8,7 +8,7 @@ import swal from 'sweetalert2';
 import * as AWS from 'aws-sdk';
 import { MzSelectModule } from 'ngx-materialize'
 
-//import * as M from "materialize-css/dist/js/materialize";
+import * as M from "materialize-css/dist/js/materialize";
 
 
 import { environment } from '../../environments/environment';

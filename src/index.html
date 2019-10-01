@@ -11,7 +11,10 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   
-
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 
           
   <meta charset="utf-8">
@@ -24,3 +27,11 @@
   <app-root></app-root>
 </body>
 </html>
+
+
+<script>
+  $(document).ready(function(){
+    $('select').formSelect();
+    $('.sidenav').sidenav();
+  });
+</script>
