@@ -23,7 +23,7 @@
     "angular2-materialize": "^15.1.10",
     "aws-sdk": "^2.538.0",
     "hammerjs": "^2.0.8",
-    "jquery": "^2.2.4",
+    "jquery": "^3.5.0",
     "materialize-css": "^1.0.0",
     "ngx-materialize": "^6.1.3",
     "rxjs": "~6.4.0",
